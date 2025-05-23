@@ -864,6 +864,17 @@ export interface LandLordCtaSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   smalltext: prismic.KeyTextField;
+
+  /**
+   * swapContentOrder field in *LandLordCta → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: land_lord_cta.default.primary.swapcontentorder
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  swapcontentorder: prismic.BooleanField;
 }
 
 /**
@@ -987,6 +998,21 @@ export interface LandlordsSliceDefaultPrimaryTogglebuttonItem {
 }
 
 /**
+ * Item in *Landlords → Image Right → Primary → ToggleButton*
+ */
+export interface LandlordsSliceImageRightPrimaryTogglebuttonItem {
+  /**
+   * Label field in *Landlords → Image Right → Primary → ToggleButton*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.togglebutton[].label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  label: prismic.KeyTextField;
+}
+
+/**
  * Primary content in *Landlords → Default → Primary*
  */
 export interface LandlordsSliceDefaultPrimary {
@@ -1085,7 +1111,7 @@ export interface LandlordsSliceDefaultPrimary {
  * Default variation for Landlords Slice
  *
  * - **API ID**: `default`
- * - **Description**: Default
+ * - **Description**: Image Left
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type LandlordsSliceDefault = prismic.SharedSliceVariation<
@@ -1095,9 +1121,128 @@ export type LandlordsSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Landlords → Image Right → Primary*
+ */
+export interface LandlordsSliceImageRightPrimary {
+  /**
+   * LandlordImage field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.landlordimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  landlordimage: prismic.ImageField<never>;
+
+  /**
+   * LandlordHeading field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.landlordheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  landlordheading: prismic.KeyTextField;
+
+  /**
+   * LandlordPara field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.landlordpara
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  landlordpara: prismic.KeyTextField;
+
+  /**
+   * SmallImage field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.smallimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  smallimage: prismic.ImageField<never>;
+
+  /**
+   * ToggleButton field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.togglebutton[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  togglebutton: prismic.GroupField<Simplify<LandlordsSliceImageRightPrimaryTogglebuttonItem>>;
+
+  /**
+   * BtnHeading field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.btnheading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btnheading: prismic.KeyTextField;
+
+  /**
+   * BtnPara field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.btnpara
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btnpara: prismic.KeyTextField;
+
+  /**
+   * Btnlabel field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.btnlabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  btnlabel: prismic.KeyTextField;
+
+  /**
+   * BtnLink field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.btnlink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  btnlink: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * ReverseLayout field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: landlords.imageRight.primary.reverselayout
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  reverselayout: prismic.BooleanField;
+}
+
+/**
+ * Image Right variation for Landlords Slice
+ *
+ * - **API ID**: `imageRight`
+ * - **Description**: Image on the Right
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LandlordsSliceImageRight = prismic.SharedSliceVariation<
+  'imageRight',
+  Simplify<LandlordsSliceImageRightPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Landlords*
  */
-type LandlordsSliceVariation = LandlordsSliceDefault;
+type LandlordsSliceVariation = LandlordsSliceDefault | LandlordsSliceImageRight;
 
 /**
  * Landlords Shared Slice
@@ -1569,8 +1714,11 @@ declare module '@prismicio/client' {
       LandlordsSlice,
       LandlordsSliceDefaultPrimaryTogglebuttonItem,
       LandlordsSliceDefaultPrimary,
+      LandlordsSliceImageRightPrimaryTogglebuttonItem,
+      LandlordsSliceImageRightPrimary,
       LandlordsSliceVariation,
       LandlordsSliceDefault,
+      LandlordsSliceImageRight,
       PropertySlice,
       PropertySliceDefaultPrimaryCardsItem,
       PropertySliceDefaultPrimaryCardsvgtextItem,

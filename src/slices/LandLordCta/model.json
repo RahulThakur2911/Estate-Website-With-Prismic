@@ -53,6 +53,15 @@
             "label": "SmallText",
             "placeholder": ""
           }
+        },
+        "swapcontentorder": {
+          "type": "Boolean",
+          "config": {
+            "label": "swapContentOrder",
+            "placeholder_false": "false",
+            "placeholder_true": "true",
+            "default_value": false
+          }
         }
       },
       "items": {}
