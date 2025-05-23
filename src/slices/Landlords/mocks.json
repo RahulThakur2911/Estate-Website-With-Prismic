@@ -109,7 +109,6 @@
 		"variation": "imageRight",
 		"primary": {
 			"landlordimage": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a",
@@ -128,6 +127,8 @@
 					"background": "transparent"
 				},
 				"alt": "she",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"landlordheading": {
@@ -141,7 +142,6 @@
 				"type": "Text"
 			},
 			"smallimage": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1600861194802-a2b11076bc51",
@@ -160,6 +160,8 @@
 					"background": "transparent"
 				},
 				"alt": "indeed",
+				"credits": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
 			"togglebutton": {
@@ -196,8 +198,8 @@
 				"type": "Text"
 			},
 			"btnlink": {
-				"__TYPE__": "LinkContent",
 				"key": "92e4a619-2f67-415c-afa7-3fa2b208f8fe",
+				"__TYPE__": "LinkContent",
 				"value": {
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com",
@@ -207,6 +209,11 @@
 			"reverselayout": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"container_size": {
+				"__TYPE__": "FieldContent",
+				"value": "default",
+				"type": "Select"
 			}
 		},
 		"items": [

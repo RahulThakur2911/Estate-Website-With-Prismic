@@ -187,6 +187,19 @@
             "placeholder_true": "true",
             "default_value": false
           }
+        },
+        "container_size": {
+          "type": "Select",
+          "config": {
+            "label": "container_size",
+            "placeholder": "",
+            "options": [
+              "default",
+              "sm",
+              "md",
+              "lg"
+            ]
+          }
         }
       },
       "items": {}

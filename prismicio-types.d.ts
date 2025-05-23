@@ -953,6 +953,16 @@ export interface LandLordCtaSliceImageRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   smalltext: prismic.KeyTextField;
+
+  /**
+   * container_size field in *LandLordCta → ImageRight → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: land_lord_cta.imageRight.primary.container_size
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  container_size: prismic.SelectField<'default' | 'small'>;
 }
 
 /**
@@ -1224,6 +1234,16 @@ export interface LandlordsSliceImageRightPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   reverselayout: prismic.BooleanField;
+
+  /**
+   * container_size field in *Landlords → Image Right → Primary*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landlords.imageRight.primary.container_size
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  container_size: prismic.SelectField<'default' | 'sm' | 'md' | 'lg'>;
 }
 
 /**

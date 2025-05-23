@@ -73,6 +73,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "animal",
 				"type": "Text"
+			},
+			"container_size": {
+				"__TYPE__": "FieldContent",
+				"value": "small",
+				"type": "Select"
 			}
 		},
 		"items": [
