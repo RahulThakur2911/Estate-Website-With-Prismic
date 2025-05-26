@@ -7,6 +7,7 @@
  */
 import { useState } from "react";
 import { PrismicNextImage } from "@prismicio/next";
+import { getContainerWidthClass } from "@/utils/containerWidth";
 
 const Landlords = ({ slice }) => {
   const [activeTab, setActiveTab] = useState("tenants");
@@ -14,32 +15,16 @@ const Landlords = ({ slice }) => {
 
   console.log("slice", slice.variation);
 
-
   // Check if current variation is 'imageRight'
   const isImageRight = slice.variation === "imageRight";
   const reverseLayout = isImageRight && slice.primary?.reverselayout === true;
 
-  const containerWidthClass = (() => {
-    switch (primary?.container_size) {
-      case "sm":
-        return "max-w-[500px]";
-      case "md":
-        return "max-w-[1000px]";
-      case "lg":
-        return "max-w-[1240px]";
-      default:
-        return "max-w-[1440px]";
-    }
-  })();
-
-
-
   return (
-
     <>
       {slice.variation === "default" && (
         <section
-          className={`${containerWidthClass} w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px] ${reverseLayout ? "flex md:flex-row-reverse" : "flex md:flex-row"
+          className={`${getContainerWidthClass(primary?.container_size)} w-full font-sans flex flex-col gap-8
+           md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px] ${reverseLayout ? "flex md:flex-row-reverse" : "flex md:flex-row"
             }`}
         >
           {/* Image Container */}
@@ -122,7 +107,7 @@ const Landlords = ({ slice }) => {
       )}
 
       {slice.variation === 'imageRight' && (<section
-        className={`${containerWidthClass} w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]`}
+        className={`${getContainerWidthClass(primary?.container_size)} w-full font-sans flex flex-col md:flex-row items-center justify-center md:justify-between bg-white mx-auto py-[70px] xl:py-[100px] px-[30px] xl:px-[160px]`}
         style={reverseLayout ? { flexDirection: 'row-reverse' } : {}}
       >
         {/* Image Container */}
